@@ -1,9 +1,8 @@
-import React, { useState } from 'react';
+import { useState } from 'react';
 import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card';
 import { Button } from '@/components/ui/button';
 import { Input } from '@/components/ui/input';
 import { Label } from '@/components/ui/label';
-import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from '@/components/ui/select';
 import { Textarea } from '@/components/ui/textarea';
 import { UserPlus, CheckCircle } from 'lucide-react';
 
@@ -13,7 +12,9 @@ const timelines = ['ASAP (1-2 weeks)', 'Standard (1-2 months)', 'Relaxed (3-6 mo
 
 export function LeadCaptureForm() {
   const [submitted, setSubmitted] = useState(false);
-  const [formData, setFormData] = useState({ name: '', email: '', phone: '', company: '', service: '', budget: '', timeline: '', description: '', vision: '' });
+  const [formData, setFormData] = useState({
+    name: '', email: '', phone: '', company: '', service: '', budget: '', timeline: '', description: '', vision: ''
+  });
 
   const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault();
@@ -27,7 +28,7 @@ export function LeadCaptureForm() {
         <CardContent className="flex flex-col items-center justify-center py-12 space-y-4">
           <CheckCircle className="w-16 h-16 text-green-500" />
           <h2 className="text-2xl font-bold text-center">Thank You!</h2>
-          <p className="text-gray-600 text-center">We have received your request. Our team will contact you within 24 hours via WhatsApp and email.</p>
+          <p className="text-gray-600 text-center">We have received your request. Our team will contact you within 24 hours.</p>
         </CardContent>
       </Card>
     );
@@ -41,27 +42,30 @@ export function LeadCaptureForm() {
           <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
             <div className="space-y-2"><Label htmlFor="name">Full Name *</Label><Input id="name" required value={formData.name} onChange={(e) => setFormData({...formData, name: e.target.value})} /></div>
             <div className="space-y-2"><Label htmlFor="email">Email *</Label><Input id="email" type="email" required value={formData.email} onChange={(e) => setFormData({...formData, email: e.target.value})} /></div>
-            <div className="space-y-2"><Label htmlFor="phone">Phone (WhatsApp)</Label><Input id="phone" type="tel" value={formData.phone} onChange={(e) => setFormData({...formData, phone: e.target.value})} /></div>
+            <div className="space-y-2"><Label htmlFor="phone">Phone</Label><Input id="phone" type="tel" value={formData.phone} onChange={(e) => setFormData({...formData, phone: e.target.value})} /></div>
             <div className="space-y-2"><Label htmlFor="company">Company</Label><Input id="company" value={formData.company} onChange={(e) => setFormData({...formData, company: e.target.value})} /></div>
           </div>
           <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
-            <div className="space-y-2"><Label>Service Needed</Label>
-              <Select onValueChange={(v) => setFormData({...formData, service: v})}>
-                <SelectTrigger><SelectValue placeholder="Select..." /></SelectTrigger>
-                <SelectContent>{services.map((s) => <SelectItem key={s} value={s}>{s}</SelectItem>)}</SelectContent>
-              </Select>
+            <div className="space-y-2">
+              <Label>Service Needed</Label>
+              <select value={formData.service} onChange={(e) => setFormData({...formData, service: e.target.value})} className="flex h-10 w-full rounded-md border border-input bg-background px-3 py-2 text-sm">
+                <option value="">Select...</option>
+                {services.map((s) => <option key={s} value={s}>{s}</option>)}
+              </select>
             </div>
-            <div className="space-y-2"><Label>Budget Range</Label>
-              <Select onValueChange={(v) => setFormData({...formData, budget: v})}>
-                <SelectTrigger><SelectValue placeholder="Select..." /></SelectTrigger>
-                <SelectContent>{budgets.map((b) => <SelectItem key={b} value={b}>{b}</SelectItem>)}</SelectContent>
-              </Select>
+            <div className="space-y-2">
+              <Label>Budget Range</Label>
+              <select value={formData.budget} onChange={(e) => setFormData({...formData, budget: e.target.value})} className="flex h-10 w-full rounded-md border border-input bg-background px-3 py-2 text-sm">
+                <option value="">Select...</option>
+                {budgets.map((b) => <option key={b} value={b}>{b}</option>)}
+              </select>
             </div>
-            <div className="space-y-2"><Label>Timeline</Label>
-              <Select onValueChange={(v) => setFormData({...formData, timeline: v})}>
-                <SelectTrigger><SelectValue placeholder="Select..." /></SelectTrigger>
-                <SelectContent>{timelines.map((t) => <SelectItem key={t} value={t}>{t}</SelectItem>)}</SelectContent>
-              </Select>
+            <div className="space-y-2">
+              <Label>Timeline</Label>
+              <select value={formData.timeline} onChange={(e) => setFormData({...formData, timeline: e.target.value})} className="flex h-10 w-full rounded-md border border-input bg-background px-3 py-2 text-sm">
+                <option value="">Select...</option>
+                {timelines.map((t) => <option key={t} value={t}>{t}</option>)}
+              </select>
             </div>
           </div>
           <div className="space-y-2"><Label htmlFor="description">Project Description</Label><Textarea id="description" placeholder="Describe what you need..." className="h-24" value={formData.description} onChange={(e) => setFormData({...formData, description: e.target.value})} /></div>

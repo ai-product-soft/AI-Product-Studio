@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import { useState } from 'react';
 import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card';
 import { Button } from '@/components/ui/button';
 import { Input } from '@/components/ui/input';
@@ -10,7 +10,7 @@ interface ResearchResult { section: string; content: string; icon: React.ReactNo
 export function MarketResearchPanel() {
   const [query, setQuery] = useState('');
   const [isResearching, setIsResearching] = useState(false);
-  const [results, setResults] = useState<<ResearchResult[] | null>(null);
+  const [results, setResults] = useState<ResearchResult[] | null>(null);
 
   const handleResearch = () => {
     if (!query.trim()) return;

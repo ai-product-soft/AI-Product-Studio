@@ -14,10 +14,11 @@ def run_self_promo_task(self, job_id):
                 if not job: return {"error": "Not found"}
                 job.status = JobStatus.RUNNING
                 await db.commit()
-n                prompt = "Create marketing for AI Product Studio. 1 banner headline, 3 ad copies, 1 tagline."
+
+                prompt = "Create marketing for AI Product Studio. 1 banner headline, 3 ad copies, 1 tagline."
                 result = await llm_manager.generate(prompt, system_prompt="Creative copywriter")
                 if result["success"]:
-n                    job.status = JobStatus.COMPLETED
+                    job.status = JobStatus.COMPLETED
                     job.result = {"content": result["content"]}
                     from app.models.approvals import Approval
                     approval = Approval(worker_name="self_promo", title="Self-Promo Ready", description="Review banner/ad content", status="pending")

@@ -1,31 +1,21 @@
-import axios from 'axios'
+const API_URL = import.meta.env.VITE_API_URL || 'http://localhost:8000/api/v1';
 
-const API_URL = import.meta.env.VITE_API_URL || 'http://localhost:8000/api/v1'
+// Basic fetch function
+export const fetchAPI = async (endpoint: string, options?: RequestInit) => {
+  const response = await fetch(`${API_URL}${endpoint}`, options);
+  if (!response.ok) throw new Error('Network response was not ok');
+  return response.json();
+};
 
-const api = axios.create({
-  baseURL: API_URL,
-  headers: {
-    'Content-Type': 'application/json',
-  },
-})
-
-export const healthCheck = () => api.get('/health')
-
-export const getProjects = () => api.get('/projects')
-export const getProject = (id: number) => api.get(`/projects/${id}`)
-export const createProject = (data: { name: string; client_idea: string }) => api.post('/projects', data)
-export const updateProject = (id: number, data: any) => api.patch(`/projects/${id}`, data)
-export const deleteProject = (id: number) => api.delete(`/projects/${id}`)
-
-export const startResearch = (id: number) => api.post(`/projects/${id}/research`)
-export const startPlan = (id: number) => api.post(`/projects/${id}/plan`)
-export const startGeneration = (id: number) => api.post(`/projects/${id}/generate`)
-export const startPromotion = (id: number) => api.post(`/projects/${id}/promote`)
-export const startSales = (id: number) => api.post(`/projects/${id}/sales`)
-
-export const getJobs = (projectId: number) => api.get(`/jobs/project/${projectId}`)
-export const getJob = (id: number) => api.get(`/jobs/${id}`)
-
-export const getDownloadToken = (projectId: number) => api.get(`/download/token/${projectId}`)
-
-export default api
+// Old API functions (for backward compatibility)
+export const healthCheck = async () => fetchAPI('/health');
+export const getProjects = async () => fetchAPI('/projects');
+export const createProject = async (data: any) => fetchAPI('/projects', { method: 'POST', headers: { 'Content-Type': 'application/json' }, body: JSON.stringify(data) });
+export const getProject = async (id: string) => fetchAPI(`/projects/${id}`);
+export const getJobs = async (projectId: string) => fetchAPI(`/projects/${projectId}/jobs`);
+export const startResearch = async (projectId: string) => fetchAPI(`/projects/${projectId}/jobs/research`, { method: 'POST' });
+export const startPlan = async (projectId: string) => fetchAPI(`/projects/${projectId}/jobs/plan`, { method: 'POST' });
+export const startGeneration = async (projectId: string) => fetchAPI(`/projects/${projectId}/jobs/generation`, { method: 'POST' });
+export const startPromotion = async (projectId: string) => fetchAPI(`/projects/${projectId}/jobs/promotion`, { method: 'POST' });
+export const startSales = async (projectId: string) => fetchAPI(`/projects/${projectId}/jobs/sales`, { method: 'POST' });
+export const getDownloadToken = async (jobId: string) => fetchAPI(`/jobs/${jobId}/download`);
