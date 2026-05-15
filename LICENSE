@@ -1,0 +1,121 @@
+AI PRODUCT STUDIO LICENSE
+Version 3.0.0 | Effective Date: 2026-05-15
+
+================================================================================
+1. DEFINITIONS
+================================================================================
+
+"Software" refers to the AI Product Studio v3.0 application, including all
+source code, documentation, configurations, and associated files.
+
+"Owner" refers to the individual or entity who has legally obtained and
+installed this Software on their own infrastructure.
+
+"Client" refers to a third party who receives services or deliverables
+generated using the Software by the Owner.
+
+================================================================================
+2. GRANT OF LICENSE
+================================================================================
+
+Subject to the terms and conditions of this License, the Owner is granted a
+non-exclusive, non-transferable, perpetual license to:
+
+(a) Install and run the Software on their own private servers or cloud
+    infrastructure.
+
+(b) Use the Software to generate products, applications, marketing materials,
+    and other deliverables for their own business or for Clients.
+
+(c) Modify the Software for their own internal use only.
+
+(d) Charge Clients for services and deliverables produced using the Software.
+
+================================================================================
+3. RESTRICTIONS
+================================================================================
+
+The Owner MAY NOT:
+
+(a) Resell, redistribute, sublicense, or transfer the Software itself to any
+    third party as a standalone product or SaaS offering.
+
+(b) Remove or alter any copyright notices, license headers, or attribution
+    contained within the Software.
+
+(c) Use the Software in any way that violates applicable laws or regulations.
+
+(d) Publicly distribute modified versions of the Software without explicit
+    written permission from the original author.
+
+(e) Use the Software to create competing products that are substantially
+    similar in functionality and purpose.
+
+================================================================================
+4. INTELLECTUAL PROPERTY
+================================================================================
+
+The Software and all intellectual property rights therein remain the property
+of the original author. This License does not grant any ownership rights.
+
+All AI-generated content (code, text, designs, plans) produced by the Software
+belongs to the Owner who generated it and may be used, sold, or distributed
+as the Owner sees fit, subject to applicable laws.
+
+================================================================================
+5. DISCLAIMER OF WARRANTY
+================================================================================
+
+THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
+IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
+FITNESS FOR A PARTICULAR PURPOSE, AND NON-INFRINGEMENT.
+
+THE OWNER ASSUMES ALL RISKS ASSOCIATED WITH THE USE OF THE SOFTWARE, INCLUDING
+BUT NOT LIMITED TO:
+- Quality and accuracy of AI-generated outputs
+- Compliance of generated content with third-party terms of service
+- Security of data stored or processed by the Software
+- Performance under specific hardware configurations
+
+================================================================================
+6. LIMITATION OF LIABILITY
+================================================================================
+
+IN NO EVENT SHALL THE ORIGINAL AUTHOR BE LIABLE FOR ANY CLAIM, DAMAGES, OR
+OTHER LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT, OR OTHERWISE,
+ARISING FROM, OUT OF, OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER
+DEALINGS IN THE SOFTWARE.
+
+================================================================================
+7. TERMINATION
+================================================================================
+
+This License is effective until terminated. The License will terminate
+automatically if the Owner fails to comply with any term or condition.
+
+Upon termination, the Owner must cease all use of the Software and destroy all
+copies in their possession.
+
+================================================================================
+8. GOVERNING LAW
+================================================================================
+
+This License shall be governed by and construed in accordance with the laws
+of the jurisdiction in which the Owner resides, without regard to conflict of
+law principles.
+
+================================================================================
+9. ENTIRE AGREEMENT
+================================================================================
+
+This License constitutes the entire agreement between the parties concerning
+the subject matter hereof and supersedes all prior agreements and understandings.
+
+================================================================================
+
+By installing, copying, or otherwise using the Software, the Owner agrees to
+be bound by the terms of this License.
+
+For licensing inquiries: dev@aiproductstudio.local
+
+Copyright (c) 2026 AI Product Studio. All rights reserved.

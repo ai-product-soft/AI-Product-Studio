@@ -1,0 +1,3 @@
+AI Product Studio v3.0 — Private-cloud business automation suite. From client idea to revenue: AI-powered market research, project planning, code generation, landing page builder, ad creatives, content generation, Stripe payments & invoicing. 100% local LLM (Ollama), zero cloud API costs. Built with FastAPI + React + PostgreSQL + Celery + Redis.
+
+Tags: ai-automation, business-automation, local-llm, ollama, fastapi, react, product-studio, idea-to-revenue, private-cloud, self-hosted
