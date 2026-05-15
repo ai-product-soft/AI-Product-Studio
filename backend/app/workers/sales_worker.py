@@ -1,7 +1,6 @@
 from celery import shared_task
 from sqlalchemy.ext.asyncio import AsyncSession
-from sqlalchemy.orm import sessionmaker
-from app.db.session import engine
+from app.db.session import AsyncSessionLocal, engine
 from app.models.job import Job, JobStatus
 from app.models.project import Project, ProjectStatus
 from app.models.invoice import Invoice
@@ -15,8 +14,7 @@ def run_sales_task(self, project_id: int, job_id: int):
     import asyncio
 
     async def _run():
-        async_session = sessionmaker(engine, class_=AsyncSession, expire_on_commit=False)
-        async with async_session() as db:
+        async with AsyncSessionLocal() as db:
             try:
                 job = await db.get(Job, job_id)
                 project = await db.get(Project, project_id)
